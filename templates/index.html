@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LCS Algorithm Visualization</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Longest Common Subsequence</h1>
+            <p>Dynamic Programming Visualization</p>
+        </header>
+
+        <div class="input-container">
+            <div class="input-row">
+                <div class="input-field">
+                    <label>String 1 (X-axis)</label>
+                    <input type="text" id="x" placeholder="MLNOM" maxlength="15">
+                </div>
+                <div class="input-field">
+                    <label>String 2 (Y-axis)</label>
+                    <input type="text" id="y" placeholder="LMOM" maxlength="15">
+                </div>
+                <button onclick="start()" class="btn-start">Compute LCS</button>
+            </div>
+        </div>
+
+        <div id="result" class="result-box"></div>
+
+        <div class="table-wrapper">
+            <div id="table"></div>
+        </div>
+
+        <!-- Backtracking Controls -->
+        <div id="backtrack-controls" class="backtrack-controls hidden">
+            <h3>Backtracking Visualization</h3>
+            <div id="lcs-info"></div>
+            <div class="button-group">
+                <!-- Buttons will be dynamically generated here -->
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <div class="info-item">
+                <span class="symbol">↖</span>
+                <span>Characters match (diagonal)</span>
+            </div>
+            <div class="info-item">
+                <span class="symbol">↑</span>
+                <span>Value from above</span>
+            </div>
+            <div class="info-item">
+                <span class="symbol">←</span>
+                <span>Value from left</span>
+            </div>
+            <div class="info-item">
+                <span class="symbol">←↑</span>
+                <span>Multiple paths possible</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
