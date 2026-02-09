@@ -1,0 +1,48 @@
+#x, #y {
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+#table td {
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+#table td.filling {
+    background-color: lightgreen;
+    transition: all 0.2s ease;
+}
+
+#table td.backtrack-path {
+    background-color: #ff6b6b !important;
+    color: white;
+    font-weight: bold;
+    animation: pulse 0.5s ease;
+}
+
+@keyframes pulse {
+    0%, 100% { 
+        transform: scale(1); 
+    }
+    50% { 
+        transform: scale(1.1); 
+    }
+}
+
+.arrow {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    color: #6c757d;
+    font-size: 1rem;
+    letter-spacing: -3px;
+}
+
+td[style*="background"] .arrow {
+    color: rgba(255,255,255,0.8);
+}
+
+#table td.backtrack-path .arrow {
+    color: rgba(255,255,255,0.9);
+}

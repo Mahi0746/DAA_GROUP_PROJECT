@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LCS Visualization</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="bg-light">
+    <div class="container py-4">
+        <!-- Header -->
+        <div class="text-center mb-4">
+            <h1>Longest Common Subsequence</h1>
+            <p class="text-muted">Dynamic Programming Visualization</p>
+        </div>
+
+        <!-- Input -->
+        <div class="card mb-3">
+            <div class="card-body">
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label class="form-label">String 1</label>
+                        <input type="text" class="form-control text-uppercase" id="s1" placeholder="Enter String 1" maxlength="15">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">String 2</label>
+                        <input type="text" class="form-control text-uppercase" id="s2" placeholder="Enter String 2" maxlength="15">
+                    </div>
+                    <div class="col-md-2 d-flex align-items-end">
+                        <button onclick="compute()" id="compute-btn" class="btn btn-dark w-100">Compute</button>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-end">
+                        <button onclick="restart()" id="restart-btn" class="btn btn-warning w-100 d-none" title="Start New Computation">
+                            New Computation
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Result -->
+        <div id="result" class="alert alert-info text-center d-none">
+        </div>
+
+        <!-- Table -->
+        <div id="table-container" class="card d-none mb-3 ">
+            <div class="card-body" id="table"></div>
+        </div>
+
+        <!-- Backtrack Controls -->
+        <div id="backtrack" class="card d-none mb-3">
+            <div class="card-body">
+                <h5>Backtracking Paths</h5>
+                <div id="lcs-info" class="mb-3"></div>
+                <div id="buttons" class="d-flex gap-2 flex-wrap"></div>
+            </div>
+        </div>
+
+        <!-- Legend -->
+        <div id="legend" class="card d-none">
+            <div class="card-body">
+                <div class="d-flex justify-content-around flex-wrap gap-3 small">
+                    <span><strong>⭦</strong> Match</span>
+                    <span><strong>⭡</strong> From above</span>
+                    <span><strong>⭠</strong> From left</span>
+                    <span><strong>⭠⭡</strong> Multiple paths</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
