@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 from lcs_logic import lcs_steps, find_all_lcs_paths  # <- separated logic
-
+import os
 app = Flask(__name__)
 
 @app.route("/")
