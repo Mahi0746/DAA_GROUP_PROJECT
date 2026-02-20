@@ -28,4 +28,6 @@ def solve():
     })
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    # Must use 0.0.0.0 to be accessible externally
+    app.run(host="0.0.0.0", port=port)
